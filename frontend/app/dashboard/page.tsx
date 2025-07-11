@@ -8,7 +8,7 @@ import { AppDispatch, persistor, RootState } from "@/redux/store/store";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import { logout } from "@/redux/store/slices/userSlice";
-import { AssessmentData, AssessmentStats, UserType } from "@/utils/types";
+import { AssessmentData, AssessmentStats } from "@/utils/types";
 
 export default function Dashboard() {
   const router = useRouter();
@@ -31,7 +31,7 @@ export default function Dashboard() {
     total: 1, // To avoid divide-by-zero
   });
 
-  const [clients, setClients] = useState<UserType[]>([]);
+  const [clients, setClients] = useState<any>([]);
 
   const calculateStats = (data: AssessmentData) => {
     const implemented = data.stats.implemented;
@@ -64,7 +64,7 @@ export default function Dashboard() {
         const allClients = response.data.clients || [];
         console.log(allClients);
         const filteredClients = allClients.filter(
-          (client: UserType) => client.assessment != null
+          (client: any) => client.assessment != null
         );
         setClients(filteredClients);
       } catch (error) {
@@ -197,7 +197,7 @@ export default function Dashboard() {
         </div>
       )}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-        {clients.map((client) => (
+        {clients.map((client: any) => (
           <Card
             key={client.id}
             className={`p-4 space-y-2 transition border-2 ${
