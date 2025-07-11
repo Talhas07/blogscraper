@@ -1,0 +1,12 @@
+node_modules
+.git
+.gitignore
+README.md
+test
+tests
+*.log
+Dockerfile
+*.sh
+*.pem
+*.zip
+.env

@@ -1,0 +1,6 @@
+node_modules
+dist
+# .env  # Commented out to allow .env file
+wait-for-it.sh  # Added to ensure it's not ignored
+uploads/*
+!uploads/.gitkeep
