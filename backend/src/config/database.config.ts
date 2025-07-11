@@ -13,6 +13,6 @@ export const getDatabaseConfig = (
   entities: [__dirname + "/../**/*.entity{.ts,.js}"],
   migrations: [__dirname + "/../migrations/*{.ts,.js}"],
   migrationsRun: false,
-  synchronize: configService.get("NODE_ENV", "development") === "development",
+  synchronize: true,
   // logging: configService.get('NODE_ENV', 'development') === 'development',
 });
